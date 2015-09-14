@@ -49,9 +49,11 @@ var logger = new( winston.Logger )({ //Winston setup
 
 You can also specify `customFormatter` which takes 3 parameters and returns an updated message object. For example:
 
+```
 customFormatter = function( level, msg, meta ) {
     return { text: "_[" + level + "]_ *" + msg + '* ' + ( meta && Object.keys(meta).length != 0 ? ', JSON: ' + JSON.stringify(meta) : '' ),
                 channel: winstonConfig.slack.channel,
                 username: winstonConfig.slack.username
         }
 }
+```
