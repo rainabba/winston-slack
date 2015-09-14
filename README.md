@@ -47,10 +47,10 @@ var logger = new( winston.Logger )({ //Winston setup
 `level`: Which logging levels should be sent (ignores lower levels)
 `handleExceptions`: See https://github.com/winstonjs/winston#exceptions
 
-You can also specify `customFormatter` which takes 3 parameters and returns an updated message object. For example:
+You can also specify `customFormatter` as an option which takes 3 parameters and returns an updated message object. For example:
 
 ```
-customFormatter = function( level, msg, meta ) {
+customFormatter: function( level, msg, meta ) {
     return { text: "_[" + level + "]_ *" + msg + '* ' + ( meta && Object.keys(meta).length != 0 ? ', JSON: ' + JSON.stringify(meta) : '' ),
                 channel: winstonConfig.slack.channel,
                 username: winstonConfig.slack.username
