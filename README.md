@@ -6,7 +6,7 @@ Basic transport that works just like all other winston transports. Sends logged 
 
 Installation:
 
-`$ npm install winston-slack`
+`npm install winston-slack --save`
 
 Typical usage:
 
